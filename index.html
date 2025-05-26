@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>MOOD TRACKER</h1>
+    <div class="input-section">
+      <input type="text" id="title" placeholder="Entry Title">
+      <select id="mood">
+        <option value="">Select a mood</option>
+        <option value="Happy">😊 Happy</option>
+        <option value="Relaxed">😌 Relaxed</option>
+        <option value="Bored">😐 Bored</option>
+        <option value="Sad">😢 Sad</option>
+        <option value="Excited">😄 Excited</option>
+        <option value="Grumpy">😠 Grumpy</option>
+        <option value="Nervous">😰 Nervous</option>
+        <option value="Productive">💪 Productive</option>
+        <option value="Sick">🤒 Sick</option>
+    </select>
+
+      <input type="date" id="date">
+    </div>
+    <textarea id="note" placeholder="type here . . ."></textarea>
+    <div class="sleep-section">
+      <label>Sleep hours - </label>
+      <input type="number" id="sleep" min="0" max="24" value="0">
+    </div>
+    <button onclick="saveEntry()">Save Entry</button>
+
+    <h2>Previous Entries</h2>
+    <div id="entries"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <canvas id="moodChart" width="400" height="200"></canvas>
+  <div class="chart-toggle">
+    <button id="weekBtn" onclick="setTimeframe('week')">Weekly</button>
+    <button id="monthBtn" onclick="setTimeframe('month')">Monthly</button>
+</div>
+
+
+
+</body>
+</html>
